@@ -33,23 +33,23 @@ html.index {
 }
 
 html.projects {
-    background-image: url("../imgs/projects.JPG");
+    background-image: url("/imgs/projects.JPG");
 }
 
 html.contacts {
-    background-image: url("../imgs/contacts.JPG");
+    background-image: url("/imgs/contacts.JPG");
 }
 
 html.about {
-    background-image: url("../imgs/about.JPG");
+    background-image: url("/imgs/about.JPG");
 }
 
 html.newp {
-    background-image: url("../imgs/newp.JPG");
+    background-image: url("/imgs/newp.JPG");
 }
 
 html.posts {
-    background-image: url("../imgs/posts.JPG");
+    background-image: url("/imgs/posts.JPG");
 }
 
 body {
