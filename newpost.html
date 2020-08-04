@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+
+<!--
+    A adicionar:
+        Form para adicionar "novo projeto" à página automaticamente com javascript.
+
+-->
+
+<html class="newp">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="newP.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>
+        New Post
+    </title>
+</head>
+
+
+<body>
+    <script type="text/javascript" src="newP.js"></script>
+
+    <div style="background-color:rgba(0, 0, 0, 0.8); color:white">
+
+        <br>
+
+        <h3 style="font-size: 200%;">New Post</h3><br>
+
+        <form name="myForm" onsubmit="return validateForm()" method="post">
+            Title: <br><input type="text" name="fname">
+            <br><br> Content: <br><textarea type="text" name="ftext" rows="4" cols="50"></textarea>
+            <input type="submit" value="Submit" id="submit">
+        </form>
+
+        <!--
+        <div id='pub-msg'>
+            thing message
+        </div>
+        <div id='pub-viewer'>
+        </div>
+        <div id='pub-list'>
+            thing list
+        </div>
+
+
+        -->
+        <br><br>
+        <a href="projects.html">Go back</a>
+        <a href="index.html">Main Page</a>
+
+        <br><br>
+
+    </div>
+
+</body>
+
+</html>

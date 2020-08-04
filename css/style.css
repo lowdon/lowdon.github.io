@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Futura-Light';
+    src: url('Futura-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura-Medium';
+    src: url('Futura-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Futura-Bold';
+    src: url('Futura-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    /* or contain depending on what you want */
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+html.index {
+    background-image: url("../imgs/back.jpg");
+}
+
+html.projects {
+    background-image: url("../imgs/projects.jpg");
+}
+
+html.contacts {
+    background-image: url("../imgs/contacts.jpg");
+}
+
+html.about {
+    background-image: url("../imgs/about.jpg");
+}
+
+html.newp {
+    background-image: url("../imgs/newp.jpg");
+}
+
+html.posts {
+    background-image: url("../imgs/posts.jpg");
+}
+
+body {
+    padding-bottom: 2.5%;
+    padding-top: 2.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+}
+
+h1 {
+    font-size: 300%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: white;
+    font-family: Futura-Medium;
+}
+
+h1.startH1 {
+    text-align: left;
+}
+
+h3 {
+    font-family: Futura-Medium;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: white;
+}
+
+h3.startH3 {
+    text-align: left;
+}
+
+h3.subtitle {
+    color: darkviolet;
+    font-size: 150%;
+}
+
+h4,
+span h4 {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: white;
+    font-size: 104%;
+    letter-spacing: 1px;
+    font-family: Futura-Light;
+    text-align: justify;
+}
+
+p {
+    margin-left: 4%;
+    margin-right: 4%;
+    font-family: Futura-Light;
+    color: white;
+    font-size: 115%;
+    text-align: justify;
+}
+
+li {
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: LightBlue;
+    font-size: 104%;
+    letter-spacing: 1px;
+    font-family: Futura-Light;
+}
+
+a,
+a span {
+    font-family: Futura-Bold;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: chocolate;
+}
+
+iframe {
+    display: block;
+    margin: auto;
+}
+
+img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.boldclass {
+    font-family: Futura-Bold;
+    color: LightBlue;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    text-align: center;
+}
+
+#pub-viewer {
+    float: right;
+    width: 48%;
+    height: 20em;
+    border: solid #d092ff 0.1em;
+}
+
+#pub-viewer iframe {
+    width: 100%;
+    height: 100%;
+}
+
+form {
+    font-family: Futura-Medium;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    color: darkviolet;
+}
+
+input {
+    resize: both;
+}
