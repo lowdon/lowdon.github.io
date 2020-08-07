@@ -36,7 +36,7 @@ html {
 }
 
 html.index {
-    background-image: url("/imgs/back.jpg");
+    background-image: url("//imgs/back.jpg");
 }
 
 html.projects {
