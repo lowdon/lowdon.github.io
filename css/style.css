@@ -19,6 +19,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Atlantean';
+    src: url('Atlantean.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html {
     height: 100%;
     width: 100%;
@@ -29,27 +36,27 @@ html {
 }
 
 html.index {
-    background-image: url("/imgs/back.JPG");
+    background-image: url("../imgs/back.jpg");
 }
 
 html.projects {
-    background-image: url("/imgs/projects.JPG");
+    background-image: url("../imgs/projects.jpg");
 }
 
 html.contacts {
-    background-image: url("/imgs/contacts.JPG");
+    background-image: url("../imgs/contacts.jpg");
 }
 
 html.about {
-    background-image: url("/imgs/about.JPG");
+    background-image: url("../imgs/about.jpg");
 }
 
 html.newp {
-    background-image: url("/imgs/newp.JPG");
+    background-image: url("../imgs/newp.jpg");
 }
 
 html.posts {
-    background-image: url("/imgs/posts.JPG");
+    background-image: url("../imgs/posts.jpg");
 }
 
 body {
@@ -171,4 +178,9 @@ form {
 
 input {
     resize: both;
+}
+
+p.atlantis {
+    font-family: Atlantean;
+    color: black;
 }
