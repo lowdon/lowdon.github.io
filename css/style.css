@@ -48,7 +48,7 @@ html.contacts {
 }
 
 html.about {
-     background-image: url("/imgs/about.JPG");
+    background-image: url("/imgs/about.JPG");
 }
 
 html.newp {
@@ -183,4 +183,9 @@ input {
 p.atlantis {
     font-family: Atlantean;
     color: black;
+}
+
+#rcorners1 {
+    border-radius: 100px;
+    padding: 20px;
 }
