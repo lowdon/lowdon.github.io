@@ -32,7 +32,6 @@ html {
     background-size: cover;
     /* or contain depending on what you want */
     background-position: center center;
-    background-repeat: no-repeat;
 }
 
 html.index {
@@ -65,13 +64,14 @@ body {
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 5%;
+    background-repeat: repeat-y;
 }
 
 h1 {
     font-size: 300%;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    color: white;
+    color:white;
     font-family: Futura-Medium;
 }
 
@@ -83,7 +83,7 @@ h3 {
     font-family: Futura-Medium;
     margin-left: 2.5%;
     margin-right: 2.5%;
-    color: white;
+    color:white;
 }
 
 h3.startH3 {
@@ -99,7 +99,7 @@ h4,
 span h4 {
     margin-left: 2.5%;
     margin-right: 2.5%;
-    color: white;
+    color:white;
     font-size: 104%;
     letter-spacing: 1px;
     font-family: Futura-Light;
@@ -110,7 +110,7 @@ p {
     margin-left: 4%;
     margin-right: 4%;
     font-family: Futura-Light;
-    color: white;
+    color:white;
     font-size: 115%;
     text-align: justify;
 }
@@ -151,6 +151,7 @@ img {
 
 table {
     margin: auto;
+    padding: 2%;
 }
 
 td {
@@ -188,4 +189,13 @@ p.atlantis {
 #rcorners1 {
     border-radius: 100px;
     padding: 20px;
+    background-color:rgba(0, 0, 0, 0.65);
+}
+
+#rightside{
+    text-align: right;
+}
+
+img.centered {
+    box-align: center;
 }

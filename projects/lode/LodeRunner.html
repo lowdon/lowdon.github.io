@@ -1,0 +1,55 @@
+<HTML>
+
+<!--
+Lode Runner!!! HTML
+
+01234567890123456789012345678901234567890123456789012345678901234567890123456789
+-->
+
+
+
+<HEAD>
+<meta charset="UTF-8">
+<title>Linguagens e Ambientes de Programação (2019/2020) [Eng.Inf. - DI/FCT/UNL] - 3º projeto prático (Javascript)</title>
+
+<SCRIPT TYPE="text/javascript" src="LodeRunner0.js"></SCRIPT>
+<SCRIPT TYPE="text/javascript" src="LodeRunner.js"></SCRIPT>
+
+
+</HEAD>
+
+<BODY onload="onLoad()">
+	<h1>Lode Runner</h1>
+	<p>Lode Runner is a 2D, fixed-screen platform game video game first published by Broderbund in 1983. Levels in 
+		Lode Runner are puzzle-oriented. The player controls one character who must collect all the gold pieces in 
+		a level and then get to the end while being chased by a number of enemies.</p>
+	<h3>Have fun!</h3>
+
+	<p><b>LodeRunner</b> -- Thiago Monteiro (55355), Francisco Costa (55822)
+	<FORM NAME="form1" align="center">
+		<CANVAS id="canvas1" width="504" height="272" style="border:2px dashed #000000; width: 40%">
+			Your browser doesn't support the HTML5 CANVAS tag.
+		</CANVAS> 
+		<p>
+			<INPUT TYPE="button" NAME="restart" VALUE="restart" SIZE=10 OnClick="b1()">
+			<INPUT TYPE="button" NAME="play music" VALUE="play music" SIZE=10 OnClick="b2()">
+			<INPUT TYPE="button" NAME="pause music" VALUE="pause music" SIZE=10 OnClick="b3()">
+			<INPUT TYPE="button" NAME="easier" VALUE="easier" SIZE=10 OnClick="b4()">
+			<INPUT TYPE="button" NAME="harder" VALUE="harder" SIZE=10 OnClick="b5()">
+			<h3 style="text-align: center;"> 
+				Points:     <span id="points"></span>
+				Lives:		<span id="lives"></span><br/>
+				Score:		<span id="score"></span>
+				Points Needed:     <span id="neededpoints"></span>
+				Level number:     <span id="ndonivel"></span>
+			</h3>
+		</p>	
+
+	</FORM>
+</BODY>
+
+
+
+</HTML>
+<!-- código inicial de AMD/2020 -->
+<!-- vim:set ts=4 sw=4 et: -->

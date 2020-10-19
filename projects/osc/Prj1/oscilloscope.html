@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <style>
+         html {
+            font-family: monospace;
+         }
+      </style>
+       
+      <script id="vertex-shader-background" type="x-shader/x-vertex">
+         attribute vec4 bg_position;
+         
+         void main() {
+              gl_Position = bg_position;
+          }
+      </script>
+       
+      <script id="fragment-shader-background" type="x-shader/x-fragment">
+        precision mediump float;
+        uniform vec4 vColorBG;
+        
+        void main() {
+           gl_FragColor = vColorBG; 
+        }
+         
+      </script>
+       
+      <script id="vertex-shader" type="x-shader/x-vertex">
+         attribute vec4 vPosition;
+         uniform float secsScale;
+         uniform float round;
+         uniform float voltsScale;
+         uniform float opt;
+         
+         void main(){ 
+            float x = vPosition.x;
+            float xToScale = (x + 1.0) / 2.0 * 10000.0 + round*10000.0; //plus round val
+            float xBackToNormal = (xToScale/10000.0 * 2.0) - 1.0;
+            float y = vPosition.y;
+            float h;
+            
+            if(opt == 1.0) {
+
+               h = sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 261.63) * voltsScale / 4.0;
+   
+               } else if(opt == 2.0) {
+   
+               h = (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 261.63) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 349.23) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 466.16) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 311.12) * voltsScale / 4.0); 
+   
+               } else if(opt == 3.0) {
+   
+               h = (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 349.23) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 369.99) * voltsScale / 4.0) ; 
+   
+               } else {
+   
+               h = sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0) * voltsScale / 4.0; 
+   
+            }
+            
+            y += h;
+            gl_Position = vec4(x, y, 0, 1); 
+            gl_PointSize = 1.0;
+         }
+      </script>
+       
+      <script id="fragment-shader" type="x-shader/x-fragment">
+         precision mediump float;
+         uniform vec4 vColor;
+         
+         void main() {
+           gl_FragColor = vColor;
+         }
+      </script>
+      
+      <script id="vertex-shader2" type="x-shader/x-vertex">
+         attribute vec4 vPosition2;
+         uniform float secsScale2;
+         uniform float round2;
+         uniform float voltsScale2;
+         uniform float opt2;
+         
+         void main(){ 
+            float x = vPosition2.x;
+            float xToScale = (x + 1.0) / 2.0 * 10000.0 + round2*10000.0; //plus round val
+            float xBackToNormal = (xToScale/10000.0 * 2.0) - 1.0;
+            float y = vPosition2.y;
+            float h;
+            
+            if(opt2 == 1.0) {
+
+               h = sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 261.63) * voltsScale2 / 4.0;
+   
+               } else if(opt2 == 2.0) {
+   
+               h = (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 261.63) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 349.23) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 466.16) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 311.12) * voltsScale2 / 4.0); 
+   
+               } else if(opt2 == 3.0) {
+   
+               h = (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 349.23) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 369.99) * voltsScale2 / 4.0) ; 
+   
+               } else if(opt2 == 4.0){
+   
+               h = sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0) * voltsScale2 / 4.0; 
+   
+            } else {
+                h=0.0;
+            }
+            
+            
+            y += h;
+            gl_Position = vec4(x, y, 0, 1); 
+            gl_PointSize = 1.0;
+         }
+      </script>
+       
+      <script id="fragment-shader2" type="x-shader/x-fragment">
+         precision mediump float;
+         uniform vec4 vColor2;
+         
+         void main() {
+           gl_FragColor = vColor2;
+         }
+      </script>
+
+      <script id="vertex-shader3" type="x-shader/x-vertex">
+         attribute vec4 vPosition3;
+         uniform float secsScale2;
+         uniform float voltsScale2;
+         uniform float opt2;
+         uniform float secsScale;
+         uniform float round;
+         uniform float voltsScale;
+         uniform float opt;
+         
+         void main(){ 
+            float x = vPosition3.x;
+            float xToScale = (x + 1.0) / 2.0 * 10000.0 + round*10000.0; //plus round val
+            float xBackToNormal = (xToScale/10000.0 * 2.0) - 1.0;
+            float h1;
+            float h2;
+            
+            if(opt == 1.0) {
+
+               h1 = sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 261.63) * voltsScale / 4.0;
+   
+               } else if(opt == 2.0) {
+   
+               h1 = (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 261.63) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 349.23) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 466.16) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 311.12) * voltsScale / 4.0); 
+   
+               } else if(opt == 3.0) {
+   
+               h1 = (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 349.23) * voltsScale / 4.0) + (sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0 * 369.99) * voltsScale / 4.0) ; 
+   
+               } else {
+   
+               h1 = sin(xBackToNormal * 6.0 * secsScale * 3.1415926 * 2.0) * voltsScale / 4.0; 
+   
+            }
+
+            if(opt2 == 1.0) {
+
+               h2 = sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 261.63) * voltsScale2 / 4.0;
+   
+               } else if(opt2 == 2.0) {
+   
+               h2 = (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 261.63) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 349.23) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 466.16) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 311.12) * voltsScale2 / 4.0); 
+   
+               } else if(opt2 == 3.0) {
+   
+               h2 = (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 349.23) * voltsScale2 / 4.0) + (sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0 * 369.99) * voltsScale2 / 4.0) ; 
+   
+               } else {
+   
+               h2 = sin(xBackToNormal * 6.0 * secsScale2 * 3.1415926 * 2.0) * voltsScale2 / 4.0; 
+   
+            }
+            
+            
+            gl_Position = vec4(h1, h2, 0, 1); 
+            gl_PointSize = 1.0;
+         }
+      </script>
+       
+      <script id="fragment-shader3" type="x-shader/x-fragment">
+         precision mediump float;
+         uniform vec4 vColor2;
+         
+         void main() {
+           gl_FragColor = vColor2;
+         }
+      </script>
+
+
+      <script type="text/javascript" src="../Common/webgl-utils.js"></script>
+      <script type="text/javascript" src="../Common/initShaders.js"></script>
+      <script type="text/javascript" src="../Common/MV.js"></script>
+      <script type="text/javascript" src="oscilloscope.js"></script>
+       
+   </head>
+    
+   <body>
+       
+      <title>Oscilloscope</title>
+      <h1>Oscilloscope</h1>
+      <h4>Francisco Gallis Costa 55822
+         <br>
+         Thiago Monteiro 55355
+      </h4>
+       
+      <canvas id="gl-canvas" width="900" height="600" >
+         Oops... your browser doesn't support the HTML5 canvas element"
+      </canvas>
+
+      
+      <p>Enable XY Mode: 
+         <select id="enableXY">
+            <option value='1.0'>True</option>
+            <option value='0.0' selected>False</option>
+         </select>
+      </p><br>
+      
+      
+      <table style="width: 50%;">
+         <th>
+      <h3>GRÁFICO 1</h3>
+       <p>Ajustar a escala horizontal:</p>
+      <select id="secsScale">
+         <option value='1e-4'>1e-4s</option>
+         <option value='2e-4'>2e-4s</option>
+         <option value='5e-4'>5e-4s</option>
+         <option value='1e-3'>1e-3s</option>
+         <option value='2e-3'>2e-3s</option>
+         <option value='5e-3'>5e-3s</option>
+         <option value='1e-2'>1e-2s</option>
+         <option value='2e-2'>2e-2s</option>
+         <option value='5e-2' selected>5e-2s</option>
+         <option value='.1'>0.1s</option>
+         <option value='.2'>0.2s</option>
+         <option value='.5'>0.5s</option>
+         <option value='1'>1s</option>
+         <option value='2'>2s</option>
+         <option value='5'>5s</option>
+         <option value='10'>10s</option>
+      </select>
+       
+       <p>Ajustar a escala vertical:</p>
+       <select id="voltsScale">
+         <option value='0.1'>0.1V</option>
+         <option value='0.2'>0.2V</option>
+         <option value='0.5'>0.5V</option>
+         <option value='1' selected>1.0V</option>
+         <option value='2'>2.0V</option>
+         <option value='5'>5.0V</option>
+         <option value='10'>10.0V</option>
+         <option value='20'>20.0V</option>
+         <option value='50'>50.0V</option>
+         <option value='100'>100.0V</option>
+         <option value='200'>200.0V</option>
+         <option value='500'>500.0V</option>
+      </select>
+       
+       <p>Escolher a onda:</p>
+       <select id="opt">
+         <option value='1.0' selected>C4 note</option>
+         <option value='2.0'>C4 major chord</option>
+         <option value='3.0'>F4 + F4# notes</option>
+         <option value='4.0'>Sin</option>
+      </select>
+   </th>
+   <th>
+      <h3>GRÁFICO 2</h3>
+      <p>Ajustar a escala horizontal:</p>
+      <select id="secsScale2">
+         <option value='1e-4'>1e-4s</option>
+         <option value='2e-4'>2e-4s</option>
+         <option value='5e-4'>5e-4s</option>
+         <option value='1e-3'>1e-3s</option>
+         <option value='2e-3'>2e-3s</option>
+         <option value='5e-3'>5e-3s</option>
+         <option value='1e-2'>1e-2s</option>
+         <option value='2e-2'>2e-2s</option>
+         <option value='5e-2' selected>5e-2s</option>
+         <option value='.1'>0.1s</option>
+         <option value='.2'>0.2s</option>
+         <option value='.5'>0.5s</option>
+         <option value='1'>1s</option>
+         <option value='2'>2s</option>
+         <option value='5'>5s</option>
+         <option value='10'>10s</option>
+      </select>
+       
+       <p>Ajustar a escala vertical:</p>
+       <select id="voltsScale2">
+         <option value='0.1'>0.1V</option>
+         <option value='0.2'>0.2V</option>
+         <option value='0.5'>0.5V</option>
+         <option value='1' selected>1.0V</option>
+         <option value='2'>2.0V</option>
+         <option value='5'>5.0V</option>
+         <option value='10'>10.0V</option>
+         <option value='20'>20.0V</option>
+         <option value='50'>50.0V</option>
+         <option value='100'>100.0V</option>
+         <option value='200'>200.0V</option>
+         <option value='500'>500.0V</option>
+      </select>
+       
+       <p>Escolher a onda:</p>
+       <select id="opt2">
+         <option value='1.0'>C4 note</option>
+         <option value='2.0'>C4 major chord</option>
+         <option value='3.0'>F4 + F4# notes</option>
+         <option value='4.0'>Sin</option>
+         <option value='5.0' selected>None</option>
+      </select>
+   </th>
+
+   </table>
+   
+</body>
+</html>
