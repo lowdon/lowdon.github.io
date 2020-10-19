@@ -27,7 +27,6 @@
 }
 
 html {
-    text-size-adjust: 100%;
     height: 100%;
     width: 100%;
     background-size: 100% auto;
@@ -157,6 +156,10 @@ table {
 
 td {
     text-align: center;
+}
+
+td>p{
+    font-size: 100%;
 }
 
 #pub-viewer {
