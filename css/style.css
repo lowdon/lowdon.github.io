@@ -35,7 +35,7 @@ html {
 }
 
 html.index {
-    background-image: url("/imgs/back.JPG");
+    background-image: url("../imgs/back.JPG");
 }
 
 html.projects {
@@ -164,6 +164,7 @@ td>p{
     font-size: 100%;
 }
 
+
 #pub-viewer {
     float: right;
     width: 48%;
@@ -204,4 +205,25 @@ p.atlantis {
 
 img.centered {
     box-align: center;
+}
+
+#rainbow-text {
+    animation: rainbow 8s ease infinite;
+    background-image: repeating-linear-gradient(45deg, violet, indigo, blue, green, yellow, orange, red, violet);
+    background-size: 800% 800%;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    font-size: 24px;
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 25%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
