@@ -35,7 +35,7 @@ html {
 }
 
 html.index {
-    background-image: url("/imgs/back.JPG");
+    background-image: url("../imgs/back.JPG");
 }
 
 html.projects {
@@ -150,9 +150,11 @@ img {
 }
 
 table {
+    table-layout: fixed;
+    width: 100%;
     margin: auto;
     padding: 2%;
-    margin-left: 2.5%;
+    margin-left: -1%;
     margin-right: 2.5%;
 }
 
