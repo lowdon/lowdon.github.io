@@ -35,27 +35,27 @@ html {
 }
 
 html.index {
-    background-image: url("../imgs/back.JPG");
+    background-image: url("/imgs/back.jpg");
 }
 
 html.projects {
-    background-image: url("/imgs/projects.JPG");
+    background-image: url("/imgs/projects.jpg");
 }
 
 html.contacts {
-    background-image: url("/imgs/contacts.JPG");
+    background-image: url("/imgs/contacts.jpg");
 }
 
 html.about {
-    background-image: url("/imgs/about.JPG");
+    background-image: url("/imgs/about.jpg");
 }
 
 html.newp {
-    background-image: url("/imgs/newp.JPG");
+    background-image: url("/imgs/newp.jpg");
 }
 
 html.posts {
-    background-image: url("/imgs/posts.JPG");
+    background-image: url("/imgs/posts.jpg");
 }
 
 body {
@@ -228,4 +228,9 @@ img.centered {
     100% {
         background-position: 0% 50%;
     }
+}
+
+#slide {
+  position: relative;
+  transition: all 1s linear
 }
