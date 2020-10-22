@@ -35,27 +35,27 @@ html {
 }
 
 html.index {
-    background-image: url("/imgs/back.jpg");
+    background-image: url("/imgs/back.JPG");
 }
 
 html.projects {
-    background-image: url("/imgs/projects.jpg");
+    background-image: url("/imgs/projects.JPG");
 }
 
 html.contacts {
-    background-image: url("/imgs/contacts.jpg");
+    background-image: url("/imgs/contacts.JPG");
 }
 
 html.about {
-    background-image: url("/imgs/about.jpg");
+    background-image: url("/imgs/about.JPG");
 }
 
 html.newp {
-    background-image: url("/imgs/newp.jpg");
+    background-image: url("/imgs/newp.JPG");
 }
 
 html.posts {
-    background-image: url("/imgs/posts.jpg");
+    background-image: url("/imgs/posts.JPG");
 }
 
 body {
