@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+html {
+    font-family: monospace;
+}
+</style>
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vNormal;
+uniform mat4 mModel;
+uniform mat4 mView;
+uniform mat4 mProjection;
+varying vec4 fNormal;
+void main(){
+    gl_Position = mProjection * mView * mModel * vPosition;
+    fNormal = vNormal;
+}
+</script>
+<script id="fragment-shader" type="x-shader/x-fragment">
+precision mediump float;
+varying vec4 fNormal;
+uniform vec4 fColor;
+void main() {
+    gl_FragColor = fColor;
+    //gl_FragColor = abs(fNormal);
+}
+</script>
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="../Common/cube.js"></script>
+<script type="text/javascript" src="../Common/sphere.js"></script>
+<script type="text/javascript" src="../Common/cylinder.js"></script>
+<script type="text/javascript" src="../Common/torus.js"></script>
+<script type="text/javascript" src="carrinha.js"></script>
+</head>
+<body style="margin-left: 30px; background-color:black; color:rgb(230, 230, 230);">
+    <div>
+    <title>News Van WebGL</title>
+    <h1>News Van 3D Modeling in WebGL</h1>
+    <h4>Made by: Francisco Gallis Costa, 15/11/2020
+        <br>
+    </h4>
+    <p>
+        Controls: W and S to move van, A and D to turn wheels, IJKL to move antenna. Select buttons below to change camera. SPACE to change to WIREFRAME or SOLID display.
+    </p>
+    <div style="text-align: center; width:100%;">
+        <canvas  style="display: inline;" id="gl-canvas" width="780" height="780" >
+            Oops... your browser doesn't support the HTML5 canvas element"
+        </canvas>
+        <div>
+            tx: <input id="tx" type="range" name="tx" min="-9.0" max="9.0" step="0.05" value="0.6"><output for="tx"></output></input>
+            ty: <input id="ty" type="range" name="ty" min="-5.0" max="-0.005" step="0.05" value="-0.4"></input>
+            tz: <input id="tz" type="range" name="tz" min="0.01" max="1.0" step="0.05" value="0.6"></input>
+        </div>
+        <div>
+            Camera:
+            <button onclick="zero()">0 (Sliders)</button>
+            <button onclick="one()">1</button>
+            <button onclick="two()">2</button>
+            <button onclick="three()">3</button>
+        </div>
+    </div>
+    
+
+    
+</body>
+</html>
